@@ -8,11 +8,26 @@
 
 import Foundation
 
+// Cell Class
 class Cell: CustomStringConvertible {
+    // Represents a row location on the grid
+    var row: Int
+    // Represents a column location on the grid
+    var col: Int
+    // Represents whether or not the cell contains the user's line
+    var containsLine: Bool
+    // Represents an emoji of the fish contained in the cell
+    var fish: String?
+    // Description of a Cell
+    var description: String {
+        return "\(fish ?? "🌊")"
+    }
     
-    
-    
-    var description: String = ""
-    
-    
+    // Initializer for Cell object
+    init(row: Int, col: Int, containsLine: Bool, fish: String?) {
+        self.row = row
+        self.col = col
+        self.containsLine = containsLine
+        self.fish = fish
+    }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var buttons: [UIButton]!
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -18,9 +18,11 @@ class ViewController: UIViewController {
         // 2 ways
         // use an outlet connection
         print("tag: \(sender.tag)")
+        /*
         if let senderIndex = buttons.firstIndex(of: sender) {
             print("Sender Index\(senderIndex)")
         }
+        */
         
         
     }
@@ -29,7 +31,5 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
 
