@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C791BBF6253E0B1E00F2812C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791BBF5253E0B1E00F2812C /* Cell.swift */; };
+		C791BBF8253E0B4F00F2812C /* CarpetSea.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791BBF7253E0B4F00F2812C /* CarpetSea.swift */; };
 		C7AD386E2534D86500CB6DF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AD386D2534D86500CB6DF5 /* AppDelegate.swift */; };
 		C7AD38702534D86500CB6DF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AD386F2534D86500CB6DF5 /* SceneDelegate.swift */; };
 		C7AD38722534D86500CB6DF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AD38712534D86500CB6DF5 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C791BBF5253E0B1E00F2812C /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		C791BBF7253E0B4F00F2812C /* CarpetSea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarpetSea.swift; sourceTree = "<group>"; };
 		C7AD386A2534D86400CB6DF5 /* Fishing Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fishing Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7AD386D2534D86500CB6DF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7AD386F2534D86500CB6DF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 			children = (
 				C7AD386D2534D86500CB6DF5 /* AppDelegate.swift */,
 				C7AD386F2534D86500CB6DF5 /* SceneDelegate.swift */,
+				C791BBF5253E0B1E00F2812C /* Cell.swift */,
+				C791BBF7253E0B4F00F2812C /* CarpetSea.swift */,
 				C7AD38712534D86500CB6DF5 /* ViewController.swift */,
 				C7AD38732534D86500CB6DF5 /* Main.storyboard */,
 				C7AD38762534D86600CB6DF5 /* Assets.xcassets */,
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7AD38722534D86500CB6DF5 /* ViewController.swift in Sources */,
+				C791BBF8253E0B4F00F2812C /* CarpetSea.swift in Sources */,
+				C791BBF6253E0B1E00F2812C /* Cell.swift in Sources */,
 				C7AD386E2534D86500CB6DF5 /* AppDelegate.swift in Sources */,
 				C7AD38702534D86500CB6DF5 /* SceneDelegate.swift in Sources */,
 			);
