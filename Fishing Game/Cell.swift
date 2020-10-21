@@ -1,6 +1,11 @@
 //
 //  Cell.swift
 //  Fishing Game
+//  This class represents a Cell in the CarpetSea game
+//  Model in MVC
+//  CPSC 315-02, Fall 2020
+//  Programming Assignment #5
+//  No sources to cite
 //
 //  Created by Steuber, Brian William on 10/19/20.
 //  Copyright © 2020 Steuber, Brian William. All rights reserved.

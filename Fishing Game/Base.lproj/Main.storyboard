@@ -162,6 +162,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="scoreLabel" destination="prg-kr-jiB" id="CIu-pp-9fD"/>
                         <outlet property="secondsLabel" destination="ZF0-wa-uRw" id="f75-9o-Jby"/>
                     </connections>
                 </viewController>

@@ -1,15 +1,17 @@
 //
 //  CarpetSea.swift
 //  Fishing Game
+//  This class represents a CarpetSea in the CarpetSea game
+//  Model in MVC
+//  CPSC 315-02, Fall 2020
+//  Programming Assignment #5
+//  Sources: Piazza for help on initializing the grid, StackOverFlow for help with 2D arrays for passing a location
 //
 //  Created by Steuber, Brian William on 10/19/20.
 //  Copyright © 2020 Steuber, Brian William. All rights reserved.
 //
 
 import Foundation
-
-// implemention consultant intern
-// zagignite
 
 // CarpetSea class
 class CarpetSea: CustomStringConvertible {
@@ -23,7 +25,7 @@ class CarpetSea: CustomStringConvertible {
     var description: String {
         // String representation
         var gridValues = ""
-        // Nested Loop
+        // Nested Loop to put values into gridValues
         for row in 0..<n {
             for col in 0..<n {
                 gridValues += grid[row][col].description + ", "
@@ -36,21 +38,26 @@ class CarpetSea: CustomStringConvertible {
     init(n: Int) {
         self.n = n
         self.availableFish = ["🐟": 1, "🦀":5, "🐙":10, "🐬":15, "🦈":20]
+        // Initializing an n by n grid
         for numRows in 0..<n {
-            var row = [Cell]()
+            var aCell = [Cell]()
             for numCols in 0..<n {
-                row.append(Cell(row: numRows, col: numCols, containsLine: false, fish: nil))
-                self.grid.append(row)
+                aCell.append(Cell(row: numRows, col: numCols, containsLine: false, fish: nil))
+                self.grid.append(aCell)
             }
         }
     }
     
     // Randomly selects a cell and places a random fish from the availableFish in the cell
     func randomlyPlaceFish() {
+        // Random Fish
         var randomGeneratedFish = ""
+        // Random number for a cell's row/col
         let cellRow = Int.random(in: 0..<n)
         let cellCol = Int.random(in: 0..<n)
+        // Random number for what fish is placed
         let randIndex = Int.random(in: 0...4)
+        //Cases for placing a fish
         if (randIndex == 0) {
             randomGeneratedFish = "🐟"
         }
@@ -66,6 +73,7 @@ class CarpetSea: CustomStringConvertible {
         if (randIndex == 4) {
             randomGeneratedFish = "🦈"
         }
+        // Make that random cell contain a random fish
         grid[cellRow][cellCol].fish = randomGeneratedFish
     }
     
@@ -76,7 +84,9 @@ class CarpetSea: CustomStringConvertible {
     
     // If the cell containing the line also contains a fish, return the fish, otherwise return nil
     func checkFishCaught(cellPosition: (Int, Int)) -> String? {
+        // Variable for the user's button they clicked
         let potentialCatch = grid[cellPosition.0][cellPosition.1].fish
+        // Check to see if the line is dropped and if there is a fish in that cell
         if (grid[cellPosition.0][cellPosition.1].containsLine && potentialCatch != nil) {
             return grid[cellPosition.0][cellPosition.1].fish
         }

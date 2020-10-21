@@ -1,6 +1,12 @@
 //
 //  ViewController.swift
 //  Fishing Game
+//  This class creates an instance of type CarpetSea and communicates
+//  this with Main.storyboard to create a CarpetSea game.
+//  Controller in MVC
+//  CPSC 315-02, Fall 2020
+//  Programming Assignment #5
+//  No sources to cite
 //
 //  Created by Steuber, Brian William on 10/12/20.
 //  Copyright © 2020 Steuber, Brian William. All rights reserved.
@@ -10,9 +16,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var secondsLabel: UILabel!
     
+    // implemention consultant intern
+    // zagignite
     
+    // vertical stack views of
+        // Score and 0
+        // Timer and 60 seconds
+        // Total 60s and stepper
+    
+    // Then put those into a horizontal stack view
+        
+    // make sure everything is in a vertical stack view at the end
     
     
     var wasCast = false
@@ -27,30 +44,19 @@ class ViewController: UIViewController {
         }
     }
     
-    // vertical stack views of
-        // Score and 0
-        // Timer and 60 seconds
-        // Total 60s and stepper
-    
-    // Then put those into a horizontal stack view
-        
-    // make sure everything is in a vertical stack view at the end
-        
-    
-    
-    
-    
-    
-    
     func gameOverFunc() {
         let alertController = UIAlertController(title: "Game Over", message: "You scored: ", preferredStyle: .alert)
         // Action for when the Okay button is pressed
         alertController.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { (action) -> Void in
             self.seconds = 60
+            self.prepUser()
             /*
             let alertController = UIAlertController(title: "Drop a Line", message: "Tap on a cell to drop your line, then wait and see if you caught a fish!", preferredStyle: .alert)
              */
         }))
+        present(alertController, animated: true, completion: { () -> Void in
+            print("Alert Just presented")
+        })
     }
     
     // timer stops but no alert comes up when game is done
@@ -59,16 +65,19 @@ class ViewController: UIViewController {
             if self.seconds > 0 {
                 self.seconds -= 1
             }
-                    /*
-                    if (self.seconds == 0) {
-                        print(self.seconds)
-                        self.gameOver = true
-                        //maybe?
-                        //self.newGamePressed(<#T##sender: UIButton##UIButton#>)
-                        // NOT WORKING
-                        
-                    }
-            }*/
+                /*
+                 if (self.seconds == 0) {
+                     print(self.seconds)
+                     // self.prepUser()
+                 }
+                 
+                 */
+            if self.seconds == 0 {
+                self.gameOverFunc()
+                self.stopTimer()
+                
+            }
+                
            
 
             
@@ -118,7 +127,7 @@ class ViewController: UIViewController {
     }
     
     func intro() {
-        let alertController = UIAlertController(title: "Welcome to Carpet Fishing!", message: "Tap a cell to drop your fishing line in carpet sea. After a second, you'll see if you caught a fish. In 60 seconds, try to get the highest score you can. Here are the available fish in Carpet Sea.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Welcome to Carpet Fishing!", message: "Tap a cell to drop your fishing line in carpet sea. After a second, you'll see if you caught a fish. In 60 seconds, try to get the highest score you can. Here are the available fish in Carpet Sea: \(sea.availableFish)", preferredStyle: .alert)
             // Action for when the Okay button is pressed
             alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (action) -> Void in
                 self.prepUser()
@@ -142,6 +151,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         self.intro()
         
     }
