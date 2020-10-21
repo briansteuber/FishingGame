@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var secondsLabel: UILabel!
     
     
-    //
+    //test2
     var gameOver = false
     var timer: Timer? = nil
         // try working wiht this
