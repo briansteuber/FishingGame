@@ -12,7 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet var secondsLabel: UILabel!
     
-    var gameOver = false
+    
+    
+    
+    var wasCast = false
+    var sea = CarpetSea(n: 2)
+    var cellPosition: (Int, Int) = (0,0)
+    var score = 0
     var timer: Timer? = nil
         // try working wiht this
     var seconds: Int = 60 {
@@ -41,7 +47,6 @@ class ViewController: UIViewController {
         // Action for when the Okay button is pressed
         alertController.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { (action) -> Void in
             self.seconds = 60
-            self.gameOver = false
             /*
             let alertController = UIAlertController(title: "Drop a Line", message: "Tap on a cell to drop your line, then wait and see if you caught a fish!", preferredStyle: .alert)
              */
@@ -51,8 +56,10 @@ class ViewController: UIViewController {
     // timer stops but no alert comes up when game is done
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (timer) in
-             if self.gameOver == false {
+            if self.seconds > 0 {
                 self.seconds -= 1
+            }
+                    /*
                     if (self.seconds == 0) {
                         print(self.seconds)
                         self.gameOver = true
@@ -61,7 +68,7 @@ class ViewController: UIViewController {
                         // NOT WORKING
                         
                     }
-            }
+            }*/
            
 
             
