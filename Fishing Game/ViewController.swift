@@ -12,8 +12,6 @@ class ViewController: UIViewController {
     
     @IBOutlet var secondsLabel: UILabel!
     
-    
-    //test2
     var gameOver = false
     var timer: Timer? = nil
         // try working wiht this
@@ -23,8 +21,15 @@ class ViewController: UIViewController {
         }
     }
     
+    // vertical stack views of
+        // Score and 0
+        // Timer and 60 seconds
+        // Total 60s and stepper
     
-    
+    // Then put those into a horizontal stack view
+        
+    // make sure everything is in a vertical stack view at the end
+        
     
     
     
