@@ -7,6 +7,7 @@
 //  CPSC 315-02, Fall 2020
 //  Programming Assignment #5
 //  Class Zoom Videos & Dr. Sprint's help with Auto Layout
+//  Extra Credit Completed 
 //
 //  Created by Steuber, Brian William on 10/12/20.
 //  Copyright © 2020 Steuber, Brian William. All rights reserved.
@@ -22,6 +23,10 @@ class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     // Seconds Label
     @IBOutlet var secondsLabel: UILabel!
+    // Total Seconds Label
+    @IBOutlet var totalSecondsLabel: UILabel!
+    // UIStepper
+    @IBOutlet var UIStepperLabel: UIStepper!
     
     // Index of the Button that was pressed 
     var indexButtons = 0
@@ -41,6 +46,8 @@ class ViewController: UIViewController {
     var timer: Timer? = nil
     // Timer object 2
     var timer2: Timer? = nil
+    // Total Seconds
+    var totalSeconds = 60
     // Variable for seconds
     var seconds: Int = 60 {
         didSet {
@@ -50,11 +57,16 @@ class ViewController: UIViewController {
     // Variable for seconds2
     var seconds2: Int = 1
     
-    // Function that overrides viewDidLoad
+    // Function that overrides viewDidLoad/Interacts with UIStepper
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        UIStepperLabel.minimumValue = 30
+        UIStepperLabel.value = 60
+        UIStepperLabel.maximumValue = 120
+        UIStepperLabel.stepValue = 5
+        UIStepperLabel.wraps = false
+        UIStepperLabel.autorepeat = true
     }
     
     // Function that overrides viewDidAppear
@@ -295,6 +307,12 @@ class ViewController: UIViewController {
         }
     }
     
+    // Function that handles when the stepper is pressed
+    @IBAction func stepperPressed(_ sender: UIStepper) {
+        self.totalSeconds = Int(sender.value)
+        totalSecondsLabel.text = ("Total: \(totalSeconds)s")
+    }
+    
     // Function to handle when the New Game button is Pressed
     @IBAction func newGamePressed(_ sender: UIButton) {
         // Stop the Timer
@@ -321,7 +339,7 @@ class ViewController: UIViewController {
         let gameOver = UIAlertController(title: "Game Over", message: "You scored: \(score)", preferredStyle: .alert)
         // Action for when the Okay button is pressed
         gameOver.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { (action) -> Void in
-            self.seconds = 60
+            self.seconds = self.totalSeconds
             self.seconds2 = 1
             self.stopTimer()
             self.stopTimer2()

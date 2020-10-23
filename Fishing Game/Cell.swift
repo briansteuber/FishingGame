@@ -6,6 +6,7 @@
 //  CPSC 315-02, Fall 2020
 //  Programming Assignment #5
 //  No sources to cite
+//  Extra Credit Completed
 //
 //  Created by Steuber, Brian William on 10/19/20.
 //  Copyright © 2020 Steuber, Brian William. All rights reserved.

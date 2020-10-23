@@ -128,6 +128,9 @@
                                                     </label>
                                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="cQD-ep-ce3">
                                                         <rect key="frame" x="0.0" y="36.5" width="93" height="32"/>
+                                                        <connections>
+                                                            <action selector="stepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="TAA-6F-hFW"/>
+                                                        </connections>
                                                     </stepper>
                                                 </subviews>
                                             </stackView>
@@ -162,8 +165,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="UIStepperLabel" destination="cQD-ep-ce3" id="hQw-Rj-kpb"/>
                         <outlet property="scoreLabel" destination="prg-kr-jiB" id="CIu-pp-9fD"/>
                         <outlet property="secondsLabel" destination="ZF0-wa-uRw" id="f75-9o-Jby"/>
+                        <outlet property="totalSecondsLabel" destination="POb-xx-HcM" id="hEI-aZ-ZKf"/>
                         <outletCollection property="buttons" destination="nyT-fo-tY3" collectionClass="NSMutableArray" id="C7K-na-Ps9"/>
                         <outletCollection property="buttons" destination="yPb-mv-4O6" collectionClass="NSMutableArray" id="ceQ-I0-R03"/>
                         <outletCollection property="buttons" destination="0fz-3K-wMI" collectionClass="NSMutableArray" id="5tx-DS-Phi"/>
