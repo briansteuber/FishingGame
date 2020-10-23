@@ -23,12 +23,12 @@ class CarpetSea: CustomStringConvertible {
     var availableFish: [String: Int]
     // Description of the CarpetSea
     var description: String {
-        // String representation
-        var gridValues = ""
+        // String representation of the grid
+        var gridValues = "\n"
         // Nested Loop to put values into gridValues
         for row in 0..<n {
             for col in 0..<n {
-                gridValues += grid[row][col].description + ", "
+                gridValues += grid[row][col].description + "\n"
             }
         }
         return gridValues
@@ -43,8 +43,8 @@ class CarpetSea: CustomStringConvertible {
             var aCell = [Cell]()
             for numCols in 0..<n {
                 aCell.append(Cell(row: numRows, col: numCols, containsLine: false, fish: nil))
-                self.grid.append(aCell)
             }
+            self.grid.append(aCell)
         }
     }
     
@@ -52,8 +52,9 @@ class CarpetSea: CustomStringConvertible {
     func randomlyPlaceFish() {
         // Random Fish
         var randomGeneratedFish = ""
-        // Random number for a cell's row/col
+        // Random number for a cell's row
         let cellRow = Int.random(in: 0..<n)
+        // Random number for a cell's col
         let cellCol = Int.random(in: 0..<n)
         // Random number for what fish is placed
         let randIndex = Int.random(in: 0...4)

@@ -25,7 +25,7 @@ class Cell: CustomStringConvertible {
     var fish: String?
     // Description of a Cell
     var description: String {
-        return "\(fish ?? "🌊") located at \(row), \(col)"
+        return "\n\(fish ?? "🌊") located at (\(row), \(col))"
     }
     
     // Initializer for Cell object
